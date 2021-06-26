@@ -1,0 +1,739 @@
+/**************
+ * BASE RULES *
+ **************/
+
+/**
+* Allows for easier manipulation of rem
+* to calculate from 10px rather than 16px.
+*/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box !important;
+    
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+
+}
+
+body { background: #fff; }
+
+/****************
+ * COMMON RULES *
+ ****************/
+
+ .flex-nowrap {
+     display: flex;
+     flex-flow: row nowrap;
+ }
+
+ .flex-wrap {
+     display: flex;
+     flex-flow: row wrap;
+ }
+
+ .primary-font  { font-family: 'Inter', sans-serif; }
+ .secondary-font { font-family: 'Montserrat', serif; }
+
+ .cta-button {
+    background: #43acdf;
+    border: 2.5px solid #fff;
+    color: #fff;
+    letter-spacing: 2px;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: .2s;
+ }
+
+ .cta-button:hover {
+     background: #1d89be;
+ }
+
+ /*************
+ * PAGE RULES *
+ **************/
+
+
+.hero {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    /** The following two lines are a hack for div
+     * to respect background image size
+     */
+    height: 0;
+    padding-top: 33.38%; /* (img-height / img-width * container-width) */
+    /**
+     * The three images represent the hero images.
+     * To manipulate one, you must ensure you are only modifying its place in the order.
+     * (ex. background: url(first), url(second), url(third)).
+     *
+     * First value is left, second is center, third is right.
+     */
+    background: url('assets/homepage1.jpg'),
+    url('assets/homepage2.jpg'),
+    url('assets/homepage3.jpg');
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 33.25%,33.25%,33.25%;
+    background-position: bottom left, bottom center, bottom right;
+}
+
+.hero-container {
+    position: absolute;
+    left: 50%;
+    top:  50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    width: 416px;
+    max-width: 100%;
+    margin: auto;
+    font-size: 4.5rem;
+    letter-spacing: 3px;
+    line-height: 50px;
+    color: #fff;
+    margin-bottom: 22px;
+}
+
+.hero-subtitle {
+    width: 416px;
+    max-width: 100%;
+    font-size: 1.6rem;
+    margin: auto;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.main-body {
+    margin-top: 25px;
+    padding-top: 90px;
+}
+
+.bg {
+    background: #f3f3f3;
+}
+
+/********
+ * CARD *
+ ********/
+
+.card {
+    width: 100%;
+    max-width: 926px;
+    margin: 0 auto 100px;
+    padding: 55px 0;
+    color: #323232;
+    background: #fff;
+    justify-content: space-around;
+    align-items: center;
+    -webkit-box-shadow: -1px 0px 16px 4px rgba(0,0,0,0.25); 
+    box-shadow: -1px 0px 16px 4px rgba(0,0,0,0.25);
+
+}
+
+.card-title {
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    line-height: 40px;
+    max-width: 250px;
+    width: 100%;
+    color: #323232;
+}
+
+.card-description {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    line-height: 22px;
+    max-width: 385px;
+    width: 100%;
+    color: #939393;
+}
+
+/**************
+ * SCIENCE OF *
+ **************/
+.science-container {
+    max-width: 1270px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 100px;
+    position: relative;
+}
+
+/* Represents the grey line to the left */
+.science-container:before {
+    position: absolute;
+    content: ' ';
+    left: 0;
+    height: 100%;
+    width: 3px;
+    top: 50%;
+    transform: translatey(-50%);
+    background: linear-gradient(0deg, rgba(202,202,202,1) 0%,
+    rgba(202,202,202,1) 45%,
+    rgba(255,255,255,0) 45%, /* The Hard cut to transparent */
+    rgba(255,255,255,0) 55%, /* End of the hard cut */
+    rgba(202,202,202,1) 55%,
+    rgba(202,202,202,1) 100%);
+}
+
+/* Represents the orange circle between the grey lines */
+.science-container:after {
+    position: absolute;
+    content: ' ';
+    left: -2.5px; /* Centering the circle */
+    top: 50%;
+    transform: translateY(-50%);
+    height: 10px;
+    width: 10px;
+    background: #d77849;
+    border-radius: 50%;
+}
+
+
+.science-content {
+    padding-left: 200px;
+    max-width: 310px;
+    width: 100%;
+}
+
+/* Extra <div> needed for pseudo-element as they
+ * do not work with <img> tags
+ * @see https://stackoverflow.com/questions/6949148/css-after-not-adding-content-to-certain-elements/6949190#6949190
+ */
+.science-logo-container {
+    width: 87px;
+    height: 106px;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.science-logo {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.science-logo-container:after {
+    content: ' ';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    max-width: 100%;
+    background: #d77849;
+    background-size: cover;
+    display: block;
+}
+.science-img {
+    width: 690px; /* + 170 + 310 + 200*/
+    max-width: 100%;
+}
+
+.science-title {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    color: #323232;
+}
+
+.science-description {
+    font-size: 1.6rem;
+    line-height: 22px;
+    color: #939393;
+}
+
+/************
+ * ARTICLES *
+ ************/
+
+.articles-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 125px;
+}
+
+.article {
+    width: 475px;
+    max-width: 100%;
+    transition: all .5s ease-in-out;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 225px 0;
+    -webkit-box-shadow: -1px 0px 16px 4px rgba(0,0,0,0.25); 
+    box-shadow: -1px 0px 16px 4px rgba(0,0,0,0.25);
+    background-repeat: no-repeat;
+}
+
+.article:before,
+.article:after {
+    content: ' ';
+    background: #d77849;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    transition: all .5s ease-in-out;
+    display: block;
+    opacity: 0;
+}
+
+.article:before {
+    top: 0;
+}
+
+.article:after {
+    bottom: 0;
+}
+
+.article:hover:before,
+.article.selected:before {
+    top: -10px;
+    opacity: 1;
+}
+
+.article:hover:after,
+.article.selected:after {
+    bottom: -10px;
+    opacity: 1;
+}
+
+.article.selected,
+.article:hover {
+    z-index: 10;
+    transform: scale(1.1);
+    -webkit-box-shadow: none; 
+    box-shadow: none;
+}
+
+/**
+ * Represents the images of each article
+ */
+
+.article.comfort { background: url('assets/comfort.jpg'); }
+.article.accessibility { background: url('assets/accessibility.jpg'); }
+.article.coverage { background: url('assets/coverage.jpg'); }
+
+
+.article-title {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 45px;
+    color: #fff;
+    position: relative;
+}
+
+.article-title:after {
+    position: absolute;
+    content: ' ';
+    height: 3px;
+    width: 70px;
+    background: rgba(215, 120, 73);
+    background-size: cover;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+}
+
+.article .article-description {
+    font-size: 1.6rem;
+    color: #fff;
+    /* Fade In Animation */
+    opacity: 0;
+    transition: all .2s ease-in-out;
+    max-width: 245px;
+    margin: auto;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.article .cta-button {
+    opacity: 0;
+}
+
+.article.selected .article-description,
+.article:hover .article-description,
+.article.selected .cta-button,
+.article:hover .cta-button {
+    opacity: 1;
+}
+
+
+/***********************
+ * OXYGEN & RON GORDON *
+ ***********************/
+
+/**
+ * Since these two sections feel cohesive in design,
+ * these rules are attempting to represent that cohesion.
+ * (Borders between each section)
+ */
+
+ .oxygen-container img,
+ .ron-gordon-content {
+     border-right: 1.5px solid #fff;
+ }
+
+ .ron-gordon .right,
+ .oxygen-content {
+     border-left: 1.5px solid #fff;
+ }
+
+ .ron-gordon-content {
+     border-left: 3px solid #fff;
+ }
+
+ .oxygen-container {
+     border-bottom: 3px solid #fff;
+ }
+
+
+/**********
+ * OXYGEN *
+ **********/
+
+.oxygen-container {
+    width: 100%;
+    max-width: 100%;
+}
+
+.oxygen-container img {
+    width: 50%;
+}
+.oxygen-content {
+    background: #43acdf;
+    width: 50%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.oxygen-content > * {
+    margin-left: 10%;
+    width: 310px;
+    max-width: 100%;
+    color: #fff;
+    line-height: 22px;
+}
+.oxygen-subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    font-weight: bold;
+    border-top: 3px solid rgba(215, 120, 73);
+    width: 240px;
+    max-width: 100%;
+    padding-top: 20px;
+}
+
+.oxygen-title {
+    font-size: 4.5rem;
+    line-height: 55px;
+    margin-bottom: 15px;
+}
+
+.oxygen-description {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.oxygen-list {
+    list-style-position: outside;
+    list-style: disc;
+    font-size: 1.6rem;
+    max-width: 100%;
+}
+
+.oxygen-list li {
+    margin-left: 15px;
+    margin-bottom: 5px;
+
+}
+
+/**************
+ * RON GORDON *
+ **************/
+
+.ron-gordon {
+    
+    background: url('assets/homepage7.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-position-x: 50%; /* A little bump for responsiveness */
+}
+.ron-gordon-content {
+    width: 577px;
+    max-width: 100%;
+    height: 100%;
+    margin: 0 0 0 auto;
+    background: rgba(215, 120, 73, .6);
+    z-index: 10;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 190px 0;
+    color: #fff;
+}
+
+/**
+ * This rule is to ensure left most content does not intrude
+ * right side of screen which would block background image.
+ */
+ .ron-gordon .right {
+    width: 50%;
+    max-width: 100%;
+ }
+
+ .ron-gordon-content > * {
+    margin: 0 0 0 115px; 
+
+ }
+
+.ron-gordon img {
+    width: 100%;
+    overflow: visible;
+}
+
+.ron-gordon-subtitle {
+    border-top: 3px solid #43acdf;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    width: 240px;
+    max-width: 100%;
+    padding-top: 25px; /* Pushing border up */
+
+}
+
+.ron-gordon-title {
+    font-size: 4.5rem;
+    margin-bottom: 25px;
+}
+
+.ron-description {
+    font-size: 1.6rem;
+    line-height: 22px;
+    margin-bottom: 25px;
+    max-width: 320px;
+    width: 100%;
+}
+
+.ron-gordon .cta-button {
+    max-width: 175px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1160px) {
+
+
+    /*******************
+     * FONT REDUCTIONS *
+     *******************/
+
+    h1,
+    .oxygen-title,
+    .ron-gordon-title,
+    .science-title,
+    .card-title {
+        font-size: 2.3rem;
+    }
+
+    .hero-subtitle,
+    .card-description,
+    .science-description,
+    .article .article-description,
+    .oxygen-description,
+    .oxygen-list,
+    .ron-description {
+        font-size: 1.2rem;
+    }
+
+    /**********************
+     * SPACING REDUCTIONS *
+     **********************/
+
+    .card {
+        margin: 0 auto 25px;
+        width: 85%;
+        margin-bottom: 50px;
+        padding: 50px 25px;
+    }
+
+    .science-container {
+        margin: 0 auto 100px 25px;
+        width: auto;
+    }
+    .science-content {
+        padding-right: 25px;
+        padding-left: 50px;
+    }
+
+    .science-img {
+        width: 50%;
+    }
+
+    .articles-container {
+        margin: 125px 25px;
+        width: auto;
+    }
+
+    .article {
+        padding: 150px 0;
+
+    }
+
+    .article.comfort,
+    .article.accessibility,
+    .article.coverage {
+        background-position: center;
+    }
+
+    .ron-gordon-content {
+        width: 50%;
+        border-left: 0;
+        padding: 50px 0;
+    }
+
+    .ron-gordon-content > * {
+        margin-left: 25px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .hero {
+        background: url('assets/homepage2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+        padding-top: 75%;
+    }
+
+    .main-body {
+        padding-top: 30px;
+    }
+
+    /***********************************
+     * REMOVING HOVER EFFECT ON MOBILE *
+     ***********************************/
+    .article {
+        position: static;
+        transition: none;
+        box-shadow: none;
+        margin-bottom: 15px;
+    }
+    .article:hover,
+    .article.selected {
+        transform: none;
+        position: static;
+    }
+
+    .article .article-description {
+        opacity: 1;
+    }
+
+    .article .cta-button {
+        opacity: 1;
+    }
+
+    .article:before,
+    .article:after {
+        display: none;
+    }
+
+    /******************************
+     * End REMOVING HOVER EFFECTS *
+     ******************************/
+
+    .flex-nowrap:not(.card) {
+        flex-flow: column nowrap;
+    }
+
+    .science-img {
+        width: 84%;
+    }
+    .science-content {
+        margin-bottom: 25px;
+        max-width: 100%;
+        width: auto;
+    }
+
+    .oxygen-container img,
+    .oxygen-content {
+        width: auto;
+    }
+
+    .oxygen-container img {
+        height: 500px;
+        object-fit: cover;
+    }
+
+    .oxygen-content {
+        padding: 25px;
+        border-top: 3px solid #fff;
+    }
+
+    .oxygen-content > * {
+        width: auto;
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .ron-gordon-content {
+        margin: 0 auto 0 0;
+        width: 100%;
+    }
+
+    .ron-gordon-content > * {
+        width: auto;
+        max-width: 100%;
+    }
+
+    .ron-gordon-subtitle {
+        max-width: 200px;
+    }
+
+    .ron-gordon .right {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .flex-nowrap {
+        flex-flow: column nowrap;
+    }
+
+    .card {
+        text-align: center;
+        padding: 25px;
+    }
+
+    .science-logo {
+        width: 75%;
+    }
+
+    .articles-container,
+    .science-container {
+        margin: 50px 25px;
+    }
+    .article {
+        padding: 50px 0;
+    }
+    .article-title {
+        font-size: 2.5rem;
+    }
+    .ron-gordon {
+        background-position-x: 68%;
+    }
+
+    
+
+}
