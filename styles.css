@@ -8,7 +8,7 @@
 */
 html {
     font-size: 62.5%;
-    box-sizing: border-box !important;
+    box-sizing: border-box;
     
 }
 
@@ -196,8 +196,8 @@ h1 {
 
 .science-content {
     padding-left: 200px;
-    max-width: 310px;
-    width: 100%;
+    max-width: 100%;
+    margin-right: 50px;
 }
 
 /* Extra <div> needed for pseudo-element as they
@@ -574,6 +574,7 @@ h1 {
     .science-content {
         padding-right: 25px;
         padding-left: 50px;
+        margin-right: 0;
     }
 
     .science-img {
@@ -733,7 +734,5 @@ h1 {
     .ron-gordon {
         background-position-x: 68%;
     }
-
-    
 
 }
