@@ -14,6 +14,8 @@
             $('.article').hover(function (e) {
                 $('.article.selected').removeClass('selected');
             });
+
+            // Defaults hover styles back to middle article.
             $('.article').mouseleave(function (e) {
                 $('.article').eq(1).addClass('selected');
             });
